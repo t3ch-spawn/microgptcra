@@ -1,13 +1,140 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .sub-heading {
+    @apply text-4xl tracking-tighter -768:text-2xl text-center;
+  }
+
+  .burger-bar {
+    @apply bg-white h-[3px];
+  }
+
+  .caseTab.active {
+    @apply bg-opacity-10 bg-white;
+  }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111111;
+  font-family: "Manrope";
+}
+
+/* html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+} */
+
+nav .nav-desktop.active {
+  background-color: rgba(255, 255, 255, 0.05);
+  transition: 0.4s ease-in-out;
+}
+
+nav .nav-desktop.active .ml-blur {
+  opacity: 1;
+}
+
+.sectionGap {
+  margin-top: 100px;
+}
+
+.trans-line {
+  background: linear-gradient(to bottom, transparent, #d9d9d9, #8972fb 70%);
+}
+
+.navbar-btn {
+  background: linear-gradient(to right, #7919b2, #fbbc77);
+}
+
+.grey-gradient-text {
+  background: linear-gradient(to right, #ffffff, #999999);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.purple-gradient-text {
+  background: linear-gradient(to right, #ae4de8, #fbbc77);
+  -webkit-text-fill-color: transparent;
+  -webkit-background-clip: text;
+}
+
+.hero-btn {
+  background: linear-gradient(to right, #7919b2 0%, #fbbc77 120%);
+  box-shadow: inset 5px 10px 10px rgba(240, 240, 240, 0.5);
+}
+
+.blur {
+  filter: blur(200px);
+}
+
+.ml-blur {
+  filter: blur(100px);
+}
+
+.black-blur {
+  background: linear-gradient(to right, #111111 20%, transparent);
+}
+.black-blur-right {
+  background: linear-gradient(to left, #111111 20%, transparent);
+}
+
+@media screen and (max-width: 500px) {
+  .black-blur {
+    background: linear-gradient(to right, #111111 45%, transparent);
+  }
+  .black-blur-right {
+    background: linear-gradient(to left, #111111 45%, transparent);
+  }
+}
+
+.caseTab.active img {
+  filter: invert(38%) sepia(87%) saturate(367%) hue-rotate(332deg)
+    brightness(96%) contrast(95%);
+}
+
+.case-tabs-grid {
+  grid-template-columns: repeat(auto-fit, minmax(170px, 200px));
+}
+
+.descriptionTab.active {
+  transform: scale(1) translateX(0) translateY(-50%);
+}
+
+.black-diag-arrow {
+  filter: invert(100%);
+}
+
+.faq-answer ~ button {
+  transform: rotate(0deg);
+  transition: 0.3s ease-in-out;
+}
+
+.faq-answer.active ~ button {
+  transform: rotate(45deg);
 }
